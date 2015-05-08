@@ -186,7 +186,7 @@ func main() {
 				ds := DiskSeries{
 					Name:    fmt.Sprintf("%v.disk", hostname),
 					Columns: []string{"percent"}}
-				ds.Points[0] = []int{int(float64(disk.Used) / float64(disk.Free) * 100)}
+				ds.Points[0] = []int{int(float64(disk.Used) / float64(disk.Total) * 100)}
 				updates = append(updates, ds)
 
 			} else {
